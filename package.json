@@ -1,0 +1,31 @@
+{
+  "name": "e-comm_be",
+  "version": "1.0.0",
+  "description": "E-Comm Backend connected with MongoDB",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --watch ./src --delay 5 src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrvingC48/E-Comm_BE.git"
+  },
+  "author": "IrvingC48",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IrvingC48/E-Comm_BE/issues"
+  },
+  "homepage": "https://github.com/IrvingC48/E-Comm_BE#readme",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^6.0.11"
+  }
+}

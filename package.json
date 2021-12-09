@@ -2,10 +2,10 @@
   "name": "e-comm_be",
   "version": "1.0.0",
   "description": "E-Comm Backend connected with MongoDB",
-  "main": "src/app.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon --watch ./src --delay 5 src/server.js"
+    "server": "node src/server.js"
   },
   "repository": {
     "type": "git",

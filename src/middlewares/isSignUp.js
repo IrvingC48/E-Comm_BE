@@ -13,8 +13,8 @@ const validateDuplicateUserorEmail = (req, res, next) => {
         };
 
         if (user) {
-            res.status(400).send({
-                message: 'El username ya existe'
+            res.status(409).send({
+                message: 'The username is already exists'
             });
             return;
         };
@@ -31,8 +31,8 @@ const validateDuplicateUserorEmail = (req, res, next) => {
             };
 
             if (user) {
-                res.status(400).send({
-                    message: 'El email ya existe'
+                res.status(409).send({
+                    message: 'The email is already exists'
                 });
                 return;
             };
@@ -47,7 +47,7 @@ const validateRoleExist = (req, res, next) => {
     if (resRole) {
         for (let index = 0; index < resRole.length; index++) {
             if (!ROLES.includes(resRole[index])) {
-                res.status(400).send({
+                res.status(409).send({
                     message: `El Role ${resRole} no existe!`
                 });
                 return;

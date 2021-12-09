@@ -10,7 +10,7 @@ const signUp = (req, res) => {
         password: req.body.password
     });
 
-    user.save((err) => {
+    user.save((err, saveUser) => {
         if (err) return res.status(500).send({
                 message: `Error al crear el usuario: ${err}`
             });
@@ -24,7 +24,7 @@ const signUp = (req, res) => {
                 };
 
                 user.roles = roles.map(role => role._id);
-                user.save(err => {
+                user.save((err, saveUser) => {
                     if (err)
                         res.status(500).send({
                             message: err
@@ -32,6 +32,7 @@ const signUp = (req, res) => {
 
                     res.status(201).send({
                         message: 'Usuario creado existosamente',
+                        id: saveUser._id,
                         token: service.createToken(user)
                     });
                 })
@@ -45,7 +46,7 @@ const signUp = (req, res) => {
                 };
 
                 user.roles = [role._id];
-                user.save(err => {
+                user.save((err, saveUser) => {
                     if (err)
                         res.status(500).send({
                             message: err
@@ -53,6 +54,7 @@ const signUp = (req, res) => {
 
                     res.status(201).send({
                         message: 'Usuario creado existosamente',
+                        id: saveUser._id,
                         token: service.createToken(user)
                     });
                 });
